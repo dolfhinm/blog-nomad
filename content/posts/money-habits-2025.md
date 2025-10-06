@@ -60,4 +60,3 @@ Once a week, scan transactions, check upcoming bills, and set one micro‑goal f
 - [ ] Sunday reset on calendar
 
 > Small, boring systems beat heroic willpower.
-

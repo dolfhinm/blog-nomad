@@ -1,4 +1,9 @@
+import { getAllPosts } from '@/lib/markdown'
+
+export const dynamic = 'force-static'
+
 export default function Home() {
+  const posts = getAllPosts()
   return (
     <main>
       <section className="hero">
@@ -13,15 +18,14 @@ export default function Home() {
       </section>
 
       <section className="container grid">
-        {Array.from({length:6}).map((_,i)=> (
-          <article className="card" key={i}>
-            <div className="card-meta">Sep 2025 · 3 min</div>
-            <h2 className="card-title"><a href={`/posts/post-${i+1}`}>Sample Post Title {i+1}</a></h2>
-            <p className="card-excerpt">Short excerpt preview for this post showing the card layout and neutral tone.</p>
+        {posts.map((p) => (
+          <article className="card" key={p.slug}>
+            <div className="card-meta">{new Date(p.data.date).toDateString()} · {p.readingTime}</div>
+            <h2 className="card-title"><a href={`/posts/${p.slug}`}>{p.data.title}</a></h2>
+            <p className="card-excerpt">{p.data.excerpt}</p>
             <div className="pillrow">
-              <a className="pill" href="/tags/guide">#guide</a>
-              <a className="pill" href="/tags/finance">#finance</a>
-              <a className="pill" href="/categories/general">General</a>
+              {p.data.category ? <span className="pill">{p.data.category}</span> : null}
+              {p.data.tags.map(t => <span key={t} className="pill">#{t}</span>)}
             </div>
           </article>
         ))}
