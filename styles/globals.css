@@ -2,29 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: #ffffff;
-  --fg: #111827;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0f19;
-    --fg: #e5e7eb;
-  }
-}
-
-html, body {
-  background: var(--bg);
-  color: var(--fg);
-}
-
-.prose :where(code):not(:where(pre *)) {
-  background: rgba(125,125,125,.1);
-  padding: .15rem .35rem;
-  border-radius: .25rem;
-}
-
-.prose pre code {
-  background: transparent;
-}
+:root { --bg: #ffffff; --fg: #111827; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0b0f19; --fg: #e5e7eb; } }
+html, body { background: var(--bg); color: var(--fg); }
+.prose :where(code):not(:where(pre *)) { background: rgba(125,125,125,.1); padding:.15rem .35rem; border-radius:.25rem; }
+.prose pre code { background: transparent; }

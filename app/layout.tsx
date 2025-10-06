@@ -23,9 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
           </nav>
         </header>
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <footer className="border-t border-zinc-200/40 dark:border-zinc-700/40 mt-16">
           <div className="mx-auto max-w-3xl px-6 py-8 opacity-70 text-sm">
             © {new Date().getFullYear()} {site}. Built on Next.js · Notion.

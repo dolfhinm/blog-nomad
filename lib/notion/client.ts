@@ -3,7 +3,7 @@ import type { PostMeta } from './types'
 
 const token = process.env.NOTION_TOKEN
 const databaseId = process.env.NOTION_DATABASE_ID
-const revalidateSeconds = Number(process.env.REVALIDATE_SECONDS || 120)
+export const REVALIDATE_SECONDS = Number(process.env.REVALIDATE_SECONDS || 120)
 
 export const notion = token ? new Client({ auth: token }) : null
 
@@ -14,32 +14,16 @@ function getPlain(rt?: { plain_text: string }[] | null): string | undefined {
 
 export async function getDatabasePosts(opts?: { publishedOnly?: boolean, tag?: string }): Promise<PostMeta[]> {
   if (!notion || !databaseId) {
-    // Demo content fallback
     return [{
-      id: 'demo',
-      title: 'Welcome to your Notion Blog',
-      slug: 'welcome',
-      description: 'Add NOTION_TOKEN and NOTION_DATABASE_ID to .env.local to fetch real posts from Notion.',
-      date: new Date().toISOString(),
-      tags: ['demo'],
-      published: true,
-      coverUrl: undefined
+      id: 'demo', title: 'Welcome to your Notion Blog', slug: 'welcome',
+      description: 'Set NOTION_TOKEN & NOTION_DATABASE_ID to fetch real posts from Notion.',
+      date: new Date().toISOString(), tags: ['demo'], published: true
     }]
   }
 
   const filters: any[] = []
-  if (opts?.publishedOnly) {
-    filters.push({
-      property: 'Published',
-      checkbox: { equals: true }
-    })
-  }
-  if (opts?.tag) {
-    filters.push({
-      property: 'Tags',
-      multi_select: { contains: opts.tag }
-    })
-  }
+  if (opts?.publishedOnly) filters.push({ property: 'Published', checkbox: { equals: true } })
+  if (opts?.tag) filters.push({ property: 'Tags', multi_select: { contains: opts.tag } })
 
   const resp = await notion.databases.query({
     database_id: databaseId,
@@ -47,7 +31,7 @@ export async function getDatabasePosts(opts?: { publishedOnly?: boolean, tag?: s
     sorts: [{ property: 'Date', direction: 'descending' }]
   })
 
-  const posts: PostMeta[] = resp.results.map((p: any) => {
+  return resp.results.map((p: any) => {
     const props = p.properties
     const title = getPlain(props.Title?.title) || 'Untitled'
     const slug = getPlain(props.Slug?.rich_text) || p.id.replace(/-/g, '')
@@ -58,8 +42,6 @@ export async function getDatabasePosts(opts?: { publishedOnly?: boolean, tag?: s
     const coverUrl = (p.cover?.external?.url || p.cover?.file?.url) ?? undefined
     return { id: p.id, title, slug, description, date, tags, published, coverUrl }
   })
-
-  return posts
 }
 
 export async function getPostBySlug(slug: string) {
@@ -67,16 +49,14 @@ export async function getPostBySlug(slug: string) {
   const target = posts.find(p => p.slug === slug)
   if (!target) return null
   if (!notion || target.id === 'demo') {
-    // Demo content
     return {
       meta: target,
       blocks: [
-        { type: 'heading_1', heading_1: { rich_text: [{ plain_text: 'Hello 👋' }] } },
-        { type: 'paragraph', paragraph: { rich_text: [{ plain_text: 'Replace demo by setting NOTION_TOKEN & NOTION_DATABASE_ID.' }] } }
+        { id: 'h1', type: 'heading_1', heading_1: { rich_text: [{ plain_text: 'Hello 👋' }] } },
+        { id: 'p1', type: 'paragraph', paragraph: { rich_text: [{ plain_text: 'Replace demo by setting NOTION env vars.' }] } }
       ]
     }
   }
-
   const blocks = await getPageBlocks(target.id)
   return { meta: target, blocks }
 }
@@ -92,5 +72,3 @@ export async function getPageBlocks(pageId: string) {
   } while (cursor)
   return blocks
 }
-
-export const REVALIDATE_SECONDS = revalidateSeconds

@@ -13,16 +13,13 @@ export async function generateRSS() {
       <description>${escapeXml(p.description || '')}</description>
     </item>`).join('')
   return `<?xml version="1.0" encoding="UTF-8" ?>
-  <rss version="2.0">
-    <channel>
-      <title>${escapeXml(site)}</title>
-      <link>${canonical('/')}</link>
-      <description>${escapeXml(site)} RSS</description>
-      ${items}
-    </channel>
-  </rss>`
+  <rss version="2.0"><channel>
+    <title>${escapeXml(site)}</title>
+    <link>${canonical('/')}</link>
+    <description>${escapeXml(site)} RSS</description>
+    ${items}
+  </channel></rss>`
 }
-
 function escapeXml(str: string) {
   return str.replace(/[<>&'"]/g, (c) => ({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c] as string))
 }
