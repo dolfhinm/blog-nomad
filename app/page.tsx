@@ -1,20 +1,31 @@
-import Container from '@/components/Container'
-import PostCard from '@/components/PostCard'
-import { getDatabasePosts, REVALIDATE_SECONDS } from '@/lib/notion/client'
-
-export const revalidate = REVALIDATE_SECONDS
-
-export default async function HomePage() {
-  const posts = await getDatabasePosts({ publishedOnly: true })
+export default function Home() {
   return (
-    <Container>
-      <section className="mb-10">
-        <h1 className="text-3xl font-semibold mb-2">Latest posts</h1>
-        <p className="opacity-80">Powered by your Notion database. Edit content in Notion and it’ll refresh here via ISR.</p>
+    <main>
+      <section className="hero">
+        <div className="container">
+          <h1>Discover simple, useful posts</h1>
+          <p>Plain-English guides and lists. Neutral look. SEO-ready.</p>
+          <form className="searchbar" action="/search">
+            <input name="q" placeholder="Search posts..." />
+            <button>Search</button>
+          </form>
+        </div>
       </section>
-      <div className="grid gap-6">
-        {posts.map(p => <PostCard key={p.id} post={p} />)}
-      </div>
-    </Container>
+
+      <section className="container grid">
+        {Array.from({length:6}).map((_,i)=> (
+          <article className="card" key={i}>
+            <div className="card-meta">Sep 2025 · 3 min</div>
+            <h2 className="card-title"><a href={`/posts/post-${i+1}`}>Sample Post Title {i+1}</a></h2>
+            <p className="card-excerpt">Short excerpt preview for this post showing the card layout and neutral tone.</p>
+            <div className="pillrow">
+              <a className="pill" href="/tags/guide">#guide</a>
+              <a className="pill" href="/tags/finance">#finance</a>
+              <a className="pill" href="/categories/general">General</a>
+            </div>
+          </article>
+        ))}
+      </section>
+    </main>
   )
 }
