@@ -1,5 +1,3 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Minimal config suitable for Vercel
-}
+const nextConfig = {}
 export default nextConfig
