@@ -1,13 +1,12 @@
 {
   "name": "pbn-neobank",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write ."
+    "lint": "next lint"
   },
   "engines": {
     "node": ">=20 <23"
@@ -17,10 +16,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "gray-matter": "4.0.3",
-    "reading-time": "1.5.0",
     "remark": "15.0.1",
     "remark-html": "16.0.1",
-    "date-fns": "3.6.0"
+    "reading-time": "1.5.0"
   },
   "devDependencies": {
     "typescript": "5.5.4",
@@ -28,7 +26,6 @@
     "@types/react": "18.2.66",
     "@types/react-dom": "18.2.22",
     "eslint": "8.57.0",
-    "eslint-config-next": "^15.5.4",
-    "prettier": "3.3.2"
+    "eslint-config-next": "^15.5.4"
   }
 }
