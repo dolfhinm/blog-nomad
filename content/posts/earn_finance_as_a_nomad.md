@@ -5,11 +5,6 @@ slug: "earn_finance_as_a_nomad"
 cover: "/images/earn_finance_as_a_nomad.jpg"
 ---
 
-# Earn Finance as a Nomad
-
-![Digital Nomad
-Working](/images/earn_finance_as_a_nomad.png)
-
 ## Introduction
 
 The digital nomad lifestyle offers freedom and flexibility --- allowing
