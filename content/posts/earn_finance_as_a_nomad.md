@@ -1,7 +1,7 @@
 # Earn Finance as a Nomad
 
 ![Digital Nomad
-Working](/images/earn_finance_as_a_nomad/earn_finance_as_a_nomad.png)
+Working](A_blog_article_written_in_Markdown_format_is_prese.png)
 
 ## Introduction
 

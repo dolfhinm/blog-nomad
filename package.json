@@ -1,11 +1,12 @@
 {
   "name": "pbn-neobank-style",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "engines": {
     "node": ">=20 <23"
@@ -19,5 +20,13 @@
     "remark": "15.0.1",
     "remark-html": "16.0.1",
     "date-fns": "3.6.0"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4",
+    "@types/node": "20.14.10",
+    "@types/react": "18.2.66",
+    "@types/react-dom": "18.2.22",
+    "eslint": "8.57.0",
+    "eslint-config-next": "^15.5.4"
   }
 }
