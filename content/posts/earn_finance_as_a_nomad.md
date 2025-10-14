@@ -2,7 +2,7 @@
 title: "Earn Finance as a Nomad"
 date: "2025-10-14"
 slug: "earn_finance_as_a_nomad"
-cover: "/images/earn_finance_as_a_nomad.jpg"
+cover: "/images/earn_finance_as_a_nomad.png"
 ---
 
 ## Introduction

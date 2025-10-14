@@ -6,11 +6,8 @@ export function generateStaticParams() {
   return getAllPosts().map(p => ({ slug: p.slug }))
 }
 
-type Params = Promise<{ slug: string }>
-
-export default async function PostPage({ params }: { params: Params }) {
-  const { slug } = await params
-  const post = getPostBySlug(slug)
+export default function PostPage({ params }: { params: { slug: string }}) {
+  const post: any = getPostBySlug(params.slug)
   if (!post) return <div>Not found</div>
   return (
     <article>
