@@ -1,12 +1,13 @@
 {
-  "name": "pbn-neobank-style",
-  "version": "2.0.2",
+  "name": "pbn-neobank",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "engines": {
     "node": ">=20 <23"
@@ -27,6 +28,7 @@
     "@types/react": "18.2.66",
     "@types/react-dom": "18.2.22",
     "eslint": "8.57.0",
-    "eslint-config-next": "^15.5.4"
+    "eslint-config-next": "^15.5.4",
+    "prettier": "3.3.2"
   }
 }
