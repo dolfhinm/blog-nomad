@@ -2,8 +2,12 @@
 title: "Earn Finance as a Nomad"
 date: "2025-10-14"
 slug: "earn_finance_as_a_nomad"
-cover: "https://blog-nomad.vercel.app/images/earn_finance_as_a_nomad.png"
+
 ---
+
+<img src="https://blog-nomad.vercel.app/images/earn_finance_as_a_nomad.png"
+     alt="Automate savings"
+     style="width:100%; max-width:700px; border-radius:10px; margin:20px auto; display:block;" />
 
 ## Introduction
 
