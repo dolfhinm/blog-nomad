@@ -1,7 +1,9 @@
-# Earn Finance as a Nomad
-
-![Digital Nomad
-Working](/images/earn_finance_as_a_nomad/earn_finance_as_a_nomad.png)
+---
+title: "Earn Finance as a Nomad"
+date: "2025-10-14"
+slug: "earn_finance_as_a_nomad"
+cover: "/images/earn_finance_as_a_nomad.png"
+---
 
 ## Introduction
 
