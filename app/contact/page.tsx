@@ -4,7 +4,7 @@ export default function ContactPage() {
     <div className="container">
       <div className="card">
         <h1>Contact</h1>
-        <p>Write to <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>Write to <a href="">nomad contact</a></p>
       </div>
     </div>
   )

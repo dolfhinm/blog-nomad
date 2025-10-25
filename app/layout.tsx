@@ -1,6 +1,6 @@
 import './globals.css'
 
-export const metadata = { title: 'PBN NeoBank' }
+export const metadata = { title: 'Nomad Knowledge' }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -8,7 +8,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <header className="topbar">
           <div className="container navwrap">
-            <a className="brand" href="/">PBN NeoBank</a>
+            <a className="brand" href="/">Nomad Knowledge</a>
             <nav className="nav">
               <a href="/">Home</a>
               <a href="/about">About</a>
@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
         <main>{children}</main>
         <footer className="footer">
-          <div className="container">© 2025 PBN NeoBank</div>
+          <div className="container">© 2025 Nomad Knowledge</div>
         </footer>
       </body>
     </html>
