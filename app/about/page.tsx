@@ -3,10 +3,10 @@ export default function AboutPage() {
   return (
     <div className="container">
       <div className="card">
-<section id="about-nomad-knowledge">
+<section>
   <header>
     <h1>About <span>Nomad Knowledge</span></h1>
-    <p class="tagline">Practical guides, tools, and stories for life without borders.</p>
+    <p>Practical guides, tools, and stories for life without borders.</p>
   </header>
 
   <article>
