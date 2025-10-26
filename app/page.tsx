@@ -10,10 +10,6 @@ export default function Home() {
         <div className="container">
           <h1>All about Nomad</h1>.
           <p>Life expirience, guides and what need to become Nomad</p>
-          /*<form className="searchbar" action="/search">
-            <input name="q" placeholder="Search posts..." />
-            <button>Search</button>
-          </form> */
         </div>
       </section>
       <section className="container grid">
