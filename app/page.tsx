@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="container">
-          <h1>All about Nomad</h1>.
+          <h1>All about Nomad</h1>
           <p>Life expirience, guides and what need to become Nomad</p>
         </div>
       </section>
