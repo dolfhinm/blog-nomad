@@ -8,12 +8,12 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="container">
-          <h1>Discover simple, useful posts</h1>
-          <p>Plain-English guides and lists. Neutral look. SEO-ready.</p>
-          <form className="searchbar" action="/search">
+          <h1>All about Nomad</h1>.
+          <p>Life expirience, guides and what need to become Nomad</p>
+          /*<form className="searchbar" action="/search">
             <input name="q" placeholder="Search posts..." />
             <button>Search</button>
-          </form>
+          </form> */
         </div>
       </section>
       <section className="container grid">
